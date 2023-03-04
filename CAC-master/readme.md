@@ -7,7 +7,8 @@ In Search_params, we provide our method to identify the parameters corresponding
 Please run BFS_grid_params.m to search the paramters (about 30 minutes).
 In Fig2, please run the main.m to obtain the Landscape reduction landscape in Figure 2A [1] (about 10 minutes).
 In Fig3, please run the main.m to obtain the Landscape in different dimensions (about 15 minutes).
-In Fig4, please run the main.m to obtain the landscape control results for the given parameters (about 10 hours).
+In Fig4, please run the main.m to obtain the landscape control results for the given parameters (about 1 hour).
+
 
 
 
