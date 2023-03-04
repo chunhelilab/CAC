@@ -9,7 +9,6 @@ rkip=x(9,:);let=x(10,:);lin=x(11,:);bach=x(12,:);MEK=x(13,:);
 ERK=x(14,:);CEBP=x(15,:);PPAR=x(16,:);
 
 %%lead in the parameters
-%df(1,:)=g_MEK.*TGF.*Hs(MEK,rkip0_rM,lambda_rM,n_rM)-k_MEK.*MEK.*MEKi.*Hs(ERK,ERK0_EM,lambda_EM,n_EM);
 g_MEK=y(1);g_ERK=y(2);g_CEBP=y(3);g_PPAR=y(4);k_MEK=y(5);k_ERK=y(6);k_CEBP=y(7);k_PPAR=y(8);lambda_EM=y(9);lambda_ME=y(10);
 lambda_EE=y(11);lambda_MC=y(12);lambda_PC=y(13);lambda_EC=y(14);lambda_MP=y(15);lambda_CP=y(16);lambda_EP=y(17);n_EM=y(18);n_ME=y(19);n_EE=y(20);
 n_MC=y(21);n_PC=y(22);n_EC=y(23); n_MP=y(24);n_CP=y(25);n_EP=y(26);MEK_MC=y(27);MEK_MP=y(28);MEK0_ME=y(29);ERK0_EC=y(30);
