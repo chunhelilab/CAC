@@ -1,23 +1,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%AMAM.m
 %This is an implementation of the adaptive minimum action method developed
-%by Zhou et al. in 
-%Zhou X, Ren W, E W (2008) An adaptive minimum action method for the study
-%of rare events. J. Chem Phys 128:104111. 
-%It is to accompany the software suite with top level
-%"OptimalLeastActionControl_Top.". All license information in that file
-%pertains to this file as well. 
-%This is sparsely documented. A more thorough description of the method can
-%be found in the above paper. 
-%For use with Optimal Least Action Control, nothing in this code should be
-%altered or changed, unless a bug is found. 
-
-%Author: Daniel K. Wells 
-%Date: 11/11/2014
-%Ver 1.0
-%Email: dannykwells@gmail.com
+%by Zhou et al. in Zhou X, Ren W, E W (2008) An adaptive minimum action method for the study
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 
 
@@ -128,13 +113,7 @@ phi = [philp,phi, phirp];
 phir = phi(:,2:end);
 phil = phi(:,1:end-1);
 phihalf = (phir + phil)/2;
-
-
-
-
-%Perform the trapezoidal approximation. 
 summand = sum(((phir - phil)./(delt) - func(phihalf)).^2);
-%summand = sum(summand.^2);             
 out = .5*sum(summand.*delt(1, :));
 
 
@@ -144,7 +123,6 @@ end
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function w = monitor(phi, delt, c)
-%The monitor function
 format long
 phir = phi(:,2:end);
 phil = phi(:,1:end-1);
@@ -155,24 +133,13 @@ end
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function [Tnew, phi, delt] = gridremesh(n,m,w,delt,T,x2mod)
-%The adaptive remeshing procedure, as in E et al. 
 format short
-%Calculated the integral of w using the midpoint rule. 
 intw = sum(w.*delt(1, :));
-%Calculate alpha in accordance with the paper.
 alphak = [0,cumsum((w.*delt(1, :))/intw)];
-%The uniform alpha. 
 alphaold = 0:1/n:1;
-%This is a linear interpolation of T as a function of alpha from the
-%stretched alphak to the uniform alpha. 
 Tnew = interp1(alphak, T, alphaold, 'linear');
-%interp1 was giving a NaN in this position for reasons unknown, since it
-%should just give the end value back. This is an ragged solution to the
-%problem. 
 Tnew(end) = -T(1);
-%The matrix of delt. 
 delt = ones(m, 1)*(Tnew(2:end) - Tnew(1:end-1));
-%Find the new phi by a cubic interpolation over the remeshed T.
 phi = spline(T, x2mod, Tnew);
 end
 
@@ -187,18 +154,10 @@ end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 function path = pathfinder(start, ending, time)
-%given to starting points, creates a matrix of a linear transit between
-%them. 
 
 dims = size(start);
 dim = dims(1);
 time = time + time(end);
-
-% [xstart, ystart] = meshgrid(start);
-% [xend, yend] = mehsgrid(end);
-% [xt, yt]= meshgrid(time);
-% 
-% path
 
 xstart = start*ones(1, length(time));
 diff = (ending- start)*ones(1, length(time));
@@ -216,11 +175,8 @@ phi = [philp,phi, phirp];
 phir = phi(:,2:end);
 phil = phi(:,1:end-1);
 phihalf = (phir + phil)/2;
-%These go across all dimensions and time.
 sz = size(phihalf); 
-% out = zeros(sz(1), sz(2)-1); 
-% ndim = sz(1); 
-%For now, we will have to use a single loop
+
 T0 = ((phir - phil)./(delt) - func(phihalf)); 
 
 T0p = reshape(T0, [1,sz(1), sz(2)]); 

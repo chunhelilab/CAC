@@ -74,7 +74,7 @@ for i=1:ssn
             hold on
            x_p=ycell{i,j}(d2,:);
 y_p=ycell{i,j}(d1,:);
-z_p=griddata(x1(ky,kx),x2(ky,kx),U15(kx,ky),y_p,x_p);%G0到S间，似乎是位于上方的一条线
+z_p=griddata(x1(ky,kx),x2(ky,kx),U15(kx,ky),y_p,x_p);
 if i<j
 plot3(y_p,x_p,z_p+10,'Color','m','LineWidth',2);
 elseif i>j

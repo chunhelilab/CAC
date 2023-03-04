@@ -42,13 +42,6 @@ for j=1:nstep
           end
           x=x+res;
           
-         %{
-        st=1/h;   
-        if mod(j,st)==0
-              YJ(:,j/st,:)=x(:,:);
-              TT(j/st)=j*h;
-          end
-       %}
 end
 %}
  YJ(:,ii,:)=x;

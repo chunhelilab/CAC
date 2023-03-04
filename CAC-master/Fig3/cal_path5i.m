@@ -4,8 +4,6 @@ weight=zeros(1,ssn);
 x_ss=zeros(num+num*num,ssn);
 cov_ss=zeros(ssn,num,num);
 sig_ss=zeros(num,ssn);
-%a=1.8;
-%N=50;
 temp=1;
 for ig=1:ii
         if ~ismember(round(YJ(1,ig)),round(x_ss(1,:)))
@@ -26,8 +24,8 @@ end
 
 
 params={}; 
-params.N=80;%59 %The number of points in the minimum action path.6~15 <20
-params.TMax = 1;%Ö®Ç°ÊÇ1,10  %The time range of the minimum action path. %100
+params.N=80;
+params.TMax = 1;%
 %Larger values can be more accurate, but can also lead to instabilities. 
 params.Dimension = size(SS, 1); %The dimension of the system. 
 params.c = 1e12; %The remeshing parameter, c. Larger values give greater remeshing. 
