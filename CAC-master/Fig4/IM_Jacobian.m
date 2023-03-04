@@ -27,16 +27,9 @@ Z0_ZZ=y(151);Z0_Zm1=y(152);Z0_Zm2=y(153);Z0_Zm3=y(154);oct40_oo=y(155);oct40_om1
 snai10_sm2=y(161);snai10_sm3=y(162);snai10_sr=y(163);miR1450_m1Z=y(164);miR1450_m1o=y(165);miR1450_m1M=y(166);miR2000_m2Z=y(167);miR2000_m2le=y(168);miR340_m3s=y(169);p0_po=y(170);
 p0_pM=y(171);p0_pm1=y(172);p0_pm2=y(173);p0_pm3=y(174);P530=y(175);rkip0_rl=y(176);let0_ls=y(177);let0_let=y(178);let0_ll =y(179);let0_lb=y(180);
 lin0_lo=y(181);lin0_llet=y(182);lin0_lin=y(183);rkip0_rli=y(184);lambda_rli=y(185);n_rli=y(186);miR2000_m2li=y(187);lambda_m2li=y(188);n_m2li=y(189);
-%if ndims(xin)<4
- %   in = zeros(1, size(xin, 1), size(xin, 2)); 
- %   in(1, :, :) = xin; 
- %   xin=in; 
-%end
+
 x=xin;
-%tsteps = size(xin, 3); %If there is a constant or a zero in the jacobian...
-%x=xin;
-%format long
-%%lead in the parameters
+
 Z=x(1,:);oct4=x(2,:);MD=x(3,:);snai1=x(4,:);miR145=x(5,:);miR200=x(6,:);miR34=x(7,:);p53=x(8,:);
 rkip=x(9,:);let=x(10,:);lin=x(11,:);bach=x(12,:);MEK=x(13,:);
 ERK=x(14,:);CEBP=x(15,:);PPAR=x(16,:);

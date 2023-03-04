@@ -1,16 +1,6 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%MISE_Constraint.m
-%The nonlinear constraint function for the example OLAC problem. 
-%A simple squared magnitude. 
-%Nonlinear constraints are not required for the proper usage of OLAC. 
-
-%Author: Daniel K. Wells (? 2015
-%Ver 1.0
-%Email: dannykwells@gmail.com
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 function [C_ineq, C_eq, Cineq_grad, Ceq_grad] = IM_Constraint(x, ConstraintParams)
-%x should be the tunable parameters of the function. 
+%x is the tunable parameters of the function. 
 %This function includes all constraints on the point x, including all
 %bifurcation conditions, etc. 
 

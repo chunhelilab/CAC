@@ -1,3 +1,7 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%This is an implementation of the adaptive minimum action method developed
+%by Zhou et al. in Zhou X, Ren W, E W (2008) An adaptive minimum action method for the study
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 function [fval, phi] = AMAM(params, funcs, dfuncs)
 format long

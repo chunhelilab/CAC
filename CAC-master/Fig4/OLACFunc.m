@@ -1,9 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%This is our implementation of optimal least action control. 
-%The license of the top level function (OptimalLeastActionControl_Top.m) holds for this function and all
-%subfunctions. 
-
-
+%The implementation of optimal least action control. 
 function out=OLACFunc(Parameters) 
 
 
@@ -171,20 +167,6 @@ end
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%FixedPointContinuer.m
-%Given a dynamical system and an start/end parameter set, continue a specified
-%stable state from the starting point to the ending one. 
-%We rely on a simple homotopy method to accomplish this. More advanced
-%methods are of course possible, which is why it is recommended to include
-%a bifurcation monitoring function. 
-%Without, the function will check the determinant of the
-%jacobian of the system for its distance to 0. 
-
-%Author: Daniel K. Wells (ï¿?
-%Date: 11/11/2014
-%Ver 1.0
-%Email: dannykwells@gmail.com
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 function [out] = FixedPointContinuer(func, params)
@@ -236,23 +218,8 @@ end
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%AMAM.m
-%This is an implementation of the adaptive minimum action method developed
-%by Zhou et al. in 
-%Zhou X, Ren W, E W (2008) An adaptive minimum action method for the study
-%of rare events. J. Chem Phys 128:104111. 
-%It is to accompany the software suite with top level
-%"OptimalLeastActionControl_Top.". All license information in that file
-%pertains to this file as well. 
-%This is sparsely documented. A more thorough description of the method can
-%be found in the above paper. 
-%For use with Optimal Least Action Control, nothing in this code should be
-%altered or changed, unless a bug is found. 
-
-%Author: Daniel K. Wells (ï¿?
-%Date: 11/11/2014
-%Ver 1.0
-%Email: dannykwells@gmail.com
+%Zhou X, Ren W, E W (2008)
+%And Thank for: Daniel K. Wells
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 function [fval, phi] = AMAM(params, funcs, dfuncs)
